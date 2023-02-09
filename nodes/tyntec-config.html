@@ -1,0 +1,29 @@
+<script type="text/javascript">
+  RED.nodes.registerType('tyntec-config', {
+    category: 'config',
+    color: '#a6bbcf',
+    defaults: {
+      name: { value: '' },
+      apikey: { value: '', required: true },
+    },
+    icon: 'tyntec.png',
+    label: function () {
+      return (this.name || 'tyntec-config') + ` (...${this.apikey.slice(-4)})`;
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="tyntec-config">
+  <div class="form-row">
+      <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+      <input type="text" id="node-config-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-apikey"><i class="fa fa-tag"></i> API Key</label>
+    <input type="text" id="node-config-input-apikey">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="tyntec-config">
+  <p>Configuration for tyntec services</p>
+</script>

@@ -1,0 +1,29 @@
+<script type="text/javascript">
+  RED.nodes.registerType('phone-number', {
+    category: 'config',
+    color: '#a6bbcf',
+    defaults: {
+      name: { value: '' },
+      phonenumber: { value: '', required: true, validate: RED.validators.regex(/^\+?[1-9]\d{1,14}$/) },
+    },
+    icon: 'tyntec.png',
+    label: function () {
+      return (this.name || 'phone-number') + ` ${this.phonenumber}`;
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="phone-number">
+  <div class="form-row">
+      <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+      <input type="text" id="node-config-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-phonenumber"><i class="fa fa-tag"></i> Phone Number</label>
+    <input type="text" id="node-config-input-phonenumber">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="phone-number">
+  <p>Your phone numbers for tyntec services</p>
+</script>

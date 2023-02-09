@@ -1,0 +1,81 @@
+<script type="text/javascript">
+  RED.nodes.registerType('send-sms', {
+    category: 'function',
+    color: '#a6bbcf',
+    defaults: {
+      name: { value: '' },
+      tyntecConfig: { value: '', type: 'tyntec-config' },
+      from: { value: '', required: true },
+      to: { value: '', required: true, type: 'phone-number' },
+      message: { value: 'Hello from Node-RED', required: true },
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'tyntec.png',
+    label: function () {
+      return this.name || 'send-sms';
+    },
+    oneditprepare: function () {
+      this.editor = RED.editor.createEditor({
+        id: 'node-input-message-editor',
+        mode: 'ace/mode/text',
+        value: this.message,
+      });
+
+      // const numbers = axios.post('https://api.tyntec.com/conversations/v3/messages', msgBody, {
+      //     headers: { apikey: this.tyntecConfig.apiKey },
+      //   }).then(res => {
+      //     return this.numbers = res.;
+      //   });
+
+      // $('#node-input-to').typedInput({
+      //   types: [
+      //     {
+      //       value: 'to',
+      //       options: [
+      //         { value: 'apple', label: 'Apple' },
+      //         { value: 'banana', label: 'Banana' },
+      //         { value: 'cherry', label: 'Cherry' },
+      //       ],
+      //     },
+      //   ],
+      // });
+    },
+    oneditsave: function () {
+      this.message = this.editor.getValue();
+      this.editor.destroy();
+      delete this.editor;
+    },
+    oneditcancel: function () {
+      this.editor.destroy();
+      delete this.editor;
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="send-sms">
+  <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-tyntecConfig"><i class="fa fa-tag"></i> Tyntec Configuration</label>
+    <input type="text" id="node-input-tyntecConfig">
+  </div>
+  <div class="form-row">
+    <label for="node-input-from"><i class="fa fa-tag"></i> From</label>
+    <input type="text" id="node-input-from">
+  </div>
+  <div class="form-row">
+    <label for="node-input-to"><i class="fa fa-tag"></i> To</label>
+    <input type="text" id="node-input-to">
+  </div>
+  <div class="form-row">
+    <label for="node-input-message"><i class="fa fa-message"></i> Message</label>
+    <div style="height: 200px; min-height:150px;" class="node-text-editor" id="node-input-message-editor"></div>
+  </div>
+</script>
+
+<script type="text/html" data-help-name="send-sms">
+  <p>A simple node that console logs</p>
+</script>

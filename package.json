@@ -22,7 +22,8 @@
   "node-red": {
     "nodes": {
       "send-sms": "nodes/send-sms.js",
-      "tyntec-config": "nodes/tyntec-config.js"
+      "tyntec-config": "nodes/tyntec-config.js",
+      "phone-number-config": "nodes/phone-number-config.js"
     }
   }
 }
