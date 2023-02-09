@@ -13,7 +13,6 @@
     "editor.formatOnSave": false,
   },
   "eslint.enable": true,
-  "eslint.alwaysShowStatus": true,
   "eslint.packageManager": "yarn",
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.preferences.importModuleSpecifier": "relative",

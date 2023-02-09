@@ -1,5 +1,5 @@
 {
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "html"],
   "env": {
     "es6": true,
     "node": true
@@ -25,29 +25,6 @@
     "func-style": ["off"],
     "prefer-arrow-callback": ["error"],
     "react/display-name": "off",
-    "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/explicit-function-return-type": [
-      "off",
-      {
-        "allowTypedFunctionExpressions": true,
-        "allowExpressions": true
-      }
-    ],
-    "@next/next/no-img-element": "off",
-    "@typescript-eslint/await-thenable": ["warn"],
-    "@typescript-eslint/no-use-before-define": ["off"],
-    "@typescript-eslint/no-angle-bracket-type-assertion": ["off"],
-    "@typescript-eslint/no-require-imports": ["warn"],
-    "@typescript-eslint/no-unnecessary-type-assertion": ["warn"],
-    "@typescript-eslint/prefer-string-starts-ends-with": ["warn"],
-    "@typescript-eslint/interface-name-prefix": ["off"],
-    "@typescript-eslint/prefer-interface": ["off"],
-    "@typescript-eslint/explicit-member-accessibility": [
-      "warn",
-      {
-        "accessibility": "no-public"
-      }
-    ],
     "prettier/prettier": [
       "warn",
       {},
@@ -55,5 +32,13 @@
         "usePrettierrc": true
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": [ "*.html" ],
+      "rules": {
+        "no-undef": [ "off" ]
+      }
+    }
+  ]
 }
