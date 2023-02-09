@@ -1,0 +1,59 @@
+{
+  "plugins": ["prettier"],
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "no-console": "warn",
+    "no-unused-vars": ["off"],
+    "quotes": ["off"],
+    "eqeqeq": ["warn", "always"],
+    "no-process-env": ["off"],
+    "no-var": ["warn"],
+    "sort-imports": ["off"],
+    "func-style": ["off"],
+    "prefer-arrow-callback": ["error"],
+    "react/display-name": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/explicit-function-return-type": [
+      "off",
+      {
+        "allowTypedFunctionExpressions": true,
+        "allowExpressions": true
+      }
+    ],
+    "@next/next/no-img-element": "off",
+    "@typescript-eslint/await-thenable": ["warn"],
+    "@typescript-eslint/no-use-before-define": ["off"],
+    "@typescript-eslint/no-angle-bracket-type-assertion": ["off"],
+    "@typescript-eslint/no-require-imports": ["warn"],
+    "@typescript-eslint/no-unnecessary-type-assertion": ["warn"],
+    "@typescript-eslint/prefer-string-starts-ends-with": ["warn"],
+    "@typescript-eslint/interface-name-prefix": ["off"],
+    "@typescript-eslint/prefer-interface": ["off"],
+    "@typescript-eslint/explicit-member-accessibility": [
+      "warn",
+      {
+        "accessibility": "no-public"
+      }
+    ],
+    "prettier/prettier": [
+      "warn",
+      {},
+      {
+        "usePrettierrc": true
+      }
+    ]
+  }
+}
