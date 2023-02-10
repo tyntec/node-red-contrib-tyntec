@@ -5,9 +5,10 @@
     defaults: {
       name: { value: '' },
       tyntecConfig: { value: '', type: 'tyntec-config' },
-      from: { value: '', required: true },
+      from: { value: 'My Node-RED', required: true },
       to: { value: '', required: true, type: 'phone-number' },
       message: { value: 'Hello from Node-RED', required: true },
+      checkForDelivery: { value: true },
     },
     inputs: 1,
     outputs: 1,
@@ -21,25 +22,6 @@
         mode: 'ace/mode/text',
         value: this.message,
       });
-
-      // const numbers = axios.post('https://api.tyntec.com/conversations/v3/messages', msgBody, {
-      //     headers: { apikey: this.tyntecConfig.apiKey },
-      //   }).then(res => {
-      //     return this.numbers = res.;
-      //   });
-
-      // $('#node-input-to').typedInput({
-      //   types: [
-      //     {
-      //       value: 'to',
-      //       options: [
-      //         { value: 'apple', label: 'Apple' },
-      //         { value: 'banana', label: 'Banana' },
-      //         { value: 'cherry', label: 'Cherry' },
-      //       ],
-      //     },
-      //   ],
-      // });
     },
     oneditsave: function () {
       this.message = this.editor.getValue();
@@ -59,21 +41,37 @@
       <input type="text" id="node-input-name" placeholder="Name">
   </div>
   <div class="form-row">
-    <label for="node-input-tyntecConfig"><i class="fa fa-tag"></i> Tyntec Configuration</label>
+    <label for="node-input-tyntecConfig"><i class="fa fa-cog"></i> Tyntec Configuration</label>
     <input type="text" id="node-input-tyntecConfig">
   </div>
   <div class="form-row">
-    <label for="node-input-from"><i class="fa fa-tag"></i> From</label>
+    <label for="node-input-from"><i class="fa fa-user"></i> From</label>
     <input type="text" id="node-input-from">
   </div>
   <div class="form-row">
-    <label for="node-input-to"><i class="fa fa-tag"></i> To</label>
+    <label for="node-input-to"><i class="fa fa-phone"></i> To</label>
     <input type="text" id="node-input-to">
   </div>
   <div class="form-row">
-    <label for="node-input-message"><i class="fa fa-message"></i> Message</label>
+    <label for="node-input-message"><i class="fa fa-comment"></i> Message</label>
     <div style="height: 200px; min-height:150px;" class="node-text-editor" id="node-input-message-editor"></div>
   </div>
+  <div class="form-tips">
+    <p><b>Tip:</b> You can use variables from previous node.</p>
+    <p>Use two courly brackets at the beginning and at the end of variable name (<b><i>{{msg.name}}<i></b>).</p>
+    <b>For example:</b>
+    <ul>
+      <li>{{msg.payload}} will take <i>msg.payload</i> variable from previous node.</li>
+      <li>{{msg.topic}} will take <i>msg.topic</i> variable from previous node.</li>
+      <li>{{msg.payload.temperature}} will take <i>msg.payload.temperature</i> variable from previous node.</li>
+    </ul>
+    Learn more about <a href="https://nodered.org/docs/developing-flows/message-design" target="_blank">Message design</a> in Node-RED documentation.
+  </div>
+  <div class="form-row">
+    <label for="node-input-checkForDelivery"><i class="fa fa-check"></i> Delivery check</label>
+    <input type="checkbox" id="node-input-checkForDelivery">
+  </div>
+  <div class="form-tips"><b>Help:</b> Check for successful SMS delivery.</div>
 </script>
 
 <script type="text/html" data-help-name="send-sms">
