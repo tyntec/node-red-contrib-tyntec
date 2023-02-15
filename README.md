@@ -83,12 +83,16 @@ To deploy a flow, click the red "Deploy" button in the upper right corner.
 
 Click on the square on the left side "Fake temperature sensor" to trigger the flow.
 
+![step 4-2](./docs/step-4-2.png)
+
 You should now see a blue dot labeled "accepted" when the SMS delivery has been triggered via the API.
 
-![step 4-2](./docs/step-4-2.png)
+If the SMS has been delivered, the blue dot will change to green.
+
+![step 4-3](./docs/step-4-3.png)
 
 If the SMS has not been delivered, the blue dot will change to red.
 
-![step 4-3](./docs/step-4-3.png)
+![step 4-4](./docs/step-4-4.png)
 
 ## Contributing
