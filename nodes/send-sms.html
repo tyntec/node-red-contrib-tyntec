@@ -7,7 +7,11 @@
       tyntecConfig: { value: '', type: 'tyntec-config' },
       from: { value: 'My Node-RED', required: true },
       to: { value: '', required: true, type: 'phone-number' },
-      message: { value: 'Hello from Node-RED', required: true },
+      message: {
+        value:
+          'Hello from Node-RED.\n\nYour temperature in {{msg.payload.room}} is {{msg.payload.temperature}}ºC.\n\nYour lovely tyntec integration.',
+        required: true,
+      },
       checkForDelivery: { value: true },
     },
     inputs: 1,
