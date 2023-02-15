@@ -1,4 +1,6 @@
 const axios = require('axios');
+const replaceMsgPlaceholders = require('./utils/replace-msg-placeholders');
+const smsPayload = require('./utils/sms-payload');
 
 module.exports = function (RED) {
   function SendSMSNode(config) {
@@ -11,26 +13,10 @@ module.exports = function (RED) {
     let node = this;
 
     node.on('input', async (msg, send, done) => {
-      node.message = node.message.replace(/{{(.*?)}}/gm, (_placeholder, variable) => {
-        const valName = variable.split(/\.(.*)/s);
+      node.message = replaceMsgPlaceholders(node.message, msg);
+      node.log(`Node message: ${node.message}`);
 
-        const deepValue = function (obj, path) {
-          for (let i = 0, newpath = path.split('.'), len = newpath.length; i < len; i++) {
-            obj = obj[newpath[i]];
-          }
-          return obj;
-        };
-
-        return deepValue(msg, valName[1]);
-      });
-
-      const msgBody = {
-        from: node.from,
-        to: node.phoneNumberConfig.phonenumber,
-        content: { text: node.message, contentType: 'text' },
-        channel: 'sms',
-      };
-      node.log(`Message body: ${node.message}`);
+      const msgBody = smsPayload(node.from, node.phoneNumberConfig.phonenumber, node.message);
 
       let response;
       try {
@@ -85,17 +71,17 @@ module.exports = function (RED) {
           }
         };
 
-        let intervalId;
-
-        if (!intervalId) {
-          intervalId = setInterval(async () => {
+        const checkUntilFinalDelivery = async () => {
+          setTimeout(async () => {
             const isFinal = await checkStatus();
-            if (isFinal) {
-              clearInterval(intervalId);
-              intervalId = undefined;
+            if (!isFinal) {
+              return await checkUntilFinalDelivery();
             }
+            return;
           }, 1000);
-        }
+        };
+
+        await checkUntilFinalDelivery();
       }
 
       return done();
