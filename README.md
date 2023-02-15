@@ -37,13 +37,13 @@ Add an "inject" node.
 
 Open the edit window of the "inject" node.
 
-![step 2-2](./docs/step-2-2.png)
-
 Set:
 
 - `name` to `Fake temperature sensor`
 - `msg.payload.room` to value `Livingroom`
 - `msg.payload.temperature` to value `21`
+
+![step 2-2](./docs/step-2-2.png)
 
 Click to "Done" to save your changes.
 
