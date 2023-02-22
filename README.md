@@ -145,7 +145,7 @@ Your lovely tyntec integration.
 
   
 
-### Step 4: Deploy and test your new flow
+### Step 3: Deploy and test your new flow
 
   
 
