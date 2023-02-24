@@ -1,13 +1,14 @@
 {
   "name": "@tyntec/node-red-contrib-tyntec",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "repository": "",
   "author": "Prokop Simek <prokop.simek@dxheroes.io>",
   "license": "MIT",
   "scripts": {
     "lint": "eslint nodes",
-    "lint:fix": "eslint nodes --fix"
+    "lint:fix": "eslint nodes --fix",
+    "release": "standard-version"
   },
   "dependencies": {
     "axios": "^1.3.3"
@@ -17,7 +18,8 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.4"
+    "prettier": "^2.8.4",
+    "standard-version": "^9.5.0"
   },
   "node-red": {
     "nodes": {

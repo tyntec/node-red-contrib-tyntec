@@ -1,5 +1,5 @@
 <p>
-  <a href="https://tyntec.com" target="_blank"><img src="docs/logo.png" width="200" /></a>
+  <a href="https://tyntec.com" target="_blank"><img src="https://github.com/tyntec/node-red-contrib-tyntec/blob/main/docs/logo.png" width="200" /></a>
 </p>
 
 [![Version](https://img.shields.io/npm/v/@tyntec/node-red-contrib-tyntec.svg)](https://npmjs.org/package/@tyntec/node-red-contrib-tyntec)
@@ -139,6 +139,8 @@ Your lovely tyntec integration.
 **And that's it! You have just integrated the tyntec SMS connector for Node-Red and used it successfully.** 
 
 ## Contributing
+
+- [How to release a new version](CONTRIBUTING.md#Release-new-version)
 
 Feel free to contribute to our @tyntec/node-red-contrib-tyntec. Please follow the [Contribution Guide](CONTRIBUTING.md).
 

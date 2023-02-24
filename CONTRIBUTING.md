@@ -32,6 +32,18 @@ Follow these steps:
 
 **NOTE: Be sure to merge the latest from "upstream" before making a pull request.**
 
+## Release new version
+
+All commit messages have to be in the format of the [conventionalcommits.org](https://conventionalcommits.org) specification.
+
+1. Make sure your are on the `main` branch.
+2. Make sure you have committed everything and your code is working.
+3. Run `npm run release`
+4. Push your changes to the repository and the `main` branch.
+5. The Github Action will automatically release a new version to npmjs.com (https://npmjs.org/package/@tyntec/node-red-contrib-tyntec).
+
+For more detailed instructions read [standard-version documentation](https://github.com/conventional-changelog/standard-version).
+
 ## Copyright and Licensing
 
 The @tyntec/node-red-contrib-tyntec open source project is licensed under the [MIT License](LICENSE).
