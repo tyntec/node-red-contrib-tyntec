@@ -1,6 +1,4 @@
-<p>
-  <a href="https://tyntec.com" target="_blank"><img src="https://github.com/tyntec/node-red-contrib-tyntec/blob/main/docs/logo.png" width="200" /></a>
-</p>
+[![](https://raw.githubusercontent.com/tyntec/node-red-contrib-tyntec/main/docs/logo.png)](https://tyntec.com)
 
 [![Version](https://img.shields.io/npm/v/@tyntec/node-red-contrib-tyntec.svg)](https://npmjs.org/package/@tyntec/node-red-contrib-tyntec)
 ![Node](https://img.shields.io/node/v/@tyntec/node-red-contrib-tyntec)

@@ -21,12 +21,16 @@
     "prettier": "^2.8.4",
     "standard-version": "^9.5.0"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "keywords": [
     "node-red",
     "tyntec",
     "sms"
   ],
   "node-red": {
+    "version": ">=3.0.0",
     "nodes": {
       "send-sms": "nodes/send-sms.js",
       "tyntec-config": "nodes/tyntec-config.js",
