@@ -1,6 +1,6 @@
 {
   "name": "@tyntec/node-red-contrib-tyntec",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "https://github.com/tyntec/node-red-contrib-tyntec",
   "author": "Prokop Simek <prokop.simek@dxheroes.io>",
@@ -21,7 +21,11 @@
     "prettier": "^2.8.4",
     "standard-version": "^9.5.0"
   },
-  "keywords": [ "node-red", "tyntec", "sms" ],
+  "keywords": [
+    "node-red",
+    "tyntec",
+    "sms"
+  ],
   "node-red": {
     "nodes": {
       "send-sms": "nodes/send-sms.js",
