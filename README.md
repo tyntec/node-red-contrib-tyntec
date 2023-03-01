@@ -55,7 +55,7 @@ Our tyntec SMS services connector for Node-RED is designed to be user-friendly a
 > 
 > ```bash
 > 
-> npm install node-red-contrib-tyntec
+> npm install @tyntec/node-red-contrib-tyntec
 > 
 > ```
 
