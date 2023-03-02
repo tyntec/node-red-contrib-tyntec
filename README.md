@@ -8,7 +8,7 @@
 
 ---
 
-# node-red-contrib-tyntec
+# @tyntec/node-red-contrib-tyntec
 
 We're excited to introduce a new connector for tyntec SMS services that allows you to easily incorporate SMS messaging into your Node-RED workflows. With this connector, you can **send and receive SMS messages** using tyntec's reliable and scalable REST API. You can use this integration to trigger SMS notifications, alerts, and reminders from within your Node-RED flows, and automate your SMS-based communication.
  
