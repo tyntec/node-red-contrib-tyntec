@@ -1,6 +1,6 @@
 {
   "name": "@tyntec/node-red-contrib-tyntec",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "repository": "https://github.com/tyntec/node-red-contrib-tyntec",
   "author": "Prokop Simek <prokop.simek@dxheroes.io>",
