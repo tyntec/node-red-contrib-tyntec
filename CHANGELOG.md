@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/tyntec/node-red-contrib-tyntec/compare/v1.0.3...v1.1.0) (2023-04-04)
+
+
+### Features
+
+* tyntec source header ([b3bfd83](https://github.com/tyntec/node-red-contrib-tyntec/commit/b3bfd834ff4a1aeda3cbdd3f005f37f1714efdb5))
+
 ### [1.0.3](https://github.com/tyntec/node-red-contrib-tyntec/compare/v1.0.2...v1.0.3) (2023-03-06)
 
 ### [1.0.2](https://github.com/tyntec/node-red-contrib-tyntec/compare/v1.0.1...v1.0.2) (2023-03-02)
