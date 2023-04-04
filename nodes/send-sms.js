@@ -21,7 +21,7 @@ module.exports = function (RED) {
       let response;
       try {
         response = await axios.post('https://api.tyntec.com/conversations/v3/messages', msgBody, {
-          headers: { apikey: node.tyntecConfig.apikey },
+          headers: { apikey: node.tyntecConfig.apikey, 'x-tyntec-message-source': 'node-red' },
         });
 
         node.log('Message has been sent');
@@ -45,7 +45,7 @@ module.exports = function (RED) {
 
           try {
             statusResponse = await axios.get(`https://api.tyntec.com/conversations/v3/messages/${messageId}/status`, {
-              headers: { apikey: node.tyntecConfig.apikey },
+              headers: { apikey: node.tyntecConfig.apikey, 'x-tyntec-message-source': 'node-red' },
             });
           } catch (error) {
             node.error(error);
