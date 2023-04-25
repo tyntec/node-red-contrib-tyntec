@@ -23,7 +23,7 @@ If you have any question about this project (for example, how to use it) or if y
 Follow these steps:
 
 1. **Fork & Clone** the repository  
-2. **Setup** the DX Scanner  
+2. **Setup**
    - Install packages with `npm install`  
    - Lint code with `npm lint` or `npm lint:fix` with autofixer  
 3. **Commit** changes to your own branch by convention. See https://www.conventionalcommits.org/en/v1.0.0/
